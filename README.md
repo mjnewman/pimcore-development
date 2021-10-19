@@ -4,7 +4,7 @@ Adapted from [Pimcore Skeleton](https://github.com/pimcore/skeleton)
 
 ## Getting Started
 + Clone this repo
-    + git clone https://mjnewman@github.com/pimcore-development
+    + git clone https://github.com/mjnewman/pimcore-development
 + Run Docker Compose
     + docker-compose up -d
 + Connect to the PHP-FPM container
