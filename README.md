@@ -20,10 +20,17 @@ Adapted from [Pimcore Skeleton](https://github.com/pimcore/skeleton)
 + _Optional:_ Run container setup scripts
     + ./scripts/container_setup.sh
 
-
 ### Pimcore should now be available at:
 + https://localhost
 + https://localhost/admin
+
+### Docker notes
++ Change nginx localhsot port if desired
++ Disable utility containers if desired
+    + php-fpm-debug
+    + adminer
++ Change container & volume names if desired
++ Do not commmit docker-compose.yml changes    
 
 ### Useful Pimcore Commands
 + bin/console pimcore:deployment:classes-rebuild -c -d

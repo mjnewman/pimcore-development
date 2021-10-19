@@ -17,6 +17,12 @@ services:
             - MYSQL_USER=pimcore
             - MYSQL_PASSWORD=pimcore
 
+    adminer:
+        image: adminer
+        container_name: adminer
+        ports:
+            - 8080:8080
+
     nginx:
         image: nginx:stable-alpine
         container_name: nginx

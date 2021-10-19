@@ -51,9 +51,12 @@
 .idea
 # NetBeans
 nbproject
+# VS Code
+.vscode
 
 # keep legacy paths ignored for easier migration
 /plugins/
 /tools/
 /website/
 .temp
+
