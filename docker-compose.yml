@@ -10,7 +10,7 @@ services:
         working_dir: /application
         command: [mysqld, --character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci, --innodb-file-format=Barracuda, --innodb-large-prefix=1, --innodb-file-per-table=1]
         volumes:
-            - pimcore-demo-database:/var/lib/mysql
+            - pimcore-dev-database:/var/lib/mysql
         environment:
             - MYSQL_ROOT_PASSWORD=ROOT
             - MYSQL_DATABASE=pimcore
@@ -65,5 +65,5 @@ services:
             - ./.docker/supervisord.conf:/etc/supervisor/conf.d/pimcore.conf:ro
 
 volumes:
-    pimcore-demo-database:
+    pimcore-dev-database:
     pimcore-tmp-storage:
