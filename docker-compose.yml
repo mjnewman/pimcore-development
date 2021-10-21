@@ -5,18 +5,20 @@ services:
         container_name: redis
 
     db:
-        image: mariadb:10.5
-        container_name: mariadb
-        working_dir: /application
-        command: [mysqld, --character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci, --innodb-file-format=Barracuda, --innodb-large-prefix=1, --innodb-file-per-table=1]
-        volumes:
-            - pimcore-dev-database:/var/lib/mysql
+        image: mysql:8.0
+        container_name: mysql8
+        restart: unless-stopped
         environment:
             - MYSQL_ROOT_PASSWORD=ROOT
             - MYSQL_DATABASE=pimcore
             - MYSQL_USER=pimcore
             - MYSQL_PASSWORD=pimcore
-
+        volumes:
+            - pimcore-mysql:/var/lib/mysql
+        command: '--default-authentication-plugin=mysql_native_password'
+        ports:
+            - 3306:3306
+            
     adminer:
         image: adminer
         container_name: adminer
@@ -71,5 +73,5 @@ services:
             - ./.docker/supervisord.conf:/etc/supervisor/conf.d/pimcore.conf:ro
 
 volumes:
-    pimcore-dev-database:
+    pimcore-mysql:
     pimcore-tmp-storage:

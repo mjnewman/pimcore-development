@@ -30,7 +30,10 @@ Adapted from [Pimcore Skeleton](https://github.com/pimcore/skeleton)
     + php-fpm-debug
     + adminer
 + Change container & volume names if desired
-+ Do not commmit docker-compose.yml changes    
++ Do not commmit docker-compose.yml changes
++ Clear Docker cache & force rebuild
+    + docker builder prune
+    + docker-compose up --force-recreate --build -d
 
 ### Useful Pimcore Commands
 + bin/console pimcore:deployment:classes-rebuild -c -d
