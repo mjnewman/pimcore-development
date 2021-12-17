@@ -21,8 +21,8 @@ Adapted from [Pimcore Skeleton](https://github.com/pimcore/skeleton)
     + ./scripts/container_setup.sh
 
 ### Pimcore should now be available at:
-+ https://localhost
-+ https://localhost/admin
++ http://localhost
++ http://localhost/admin
 
 ### Docker notes
 + Change nginx localhsot port if desired
